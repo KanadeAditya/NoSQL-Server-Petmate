@@ -1,8 +1,8 @@
 import express, {Request, Response} from "express"
-// import { CustomerRouter } from "./Routes/Customer.routes"
-// import {DoctorRouter} from './Routes/Doctors.routes'
-// import {AdminRouter} from './Routes/Admins.routes'
-// import {PetRouter} from './Routes/Pets.routes'
+import { CustomerRouter } from "./Routes/Customer.routes"
+import {DoctorRouter} from './Routes/Doctors.routes'
+import {AdminRouter} from './Routes/Admins.routes'
+import {PetRouter} from './Routes/Pets.routes'
 
 //<<<<<<<<<<<-------don't touch--------->>>>>>>>>>>>
 // import { AuthMiddleware } from "./Middlewares/Auth.middle"
@@ -30,10 +30,10 @@ app.get("/", (req:Request, res:Response)=>{
 })
 
 // Routers Here 
-// app.use("/customers", CustomerRouter)
-// app.use('/doctors',DoctorRouter)
-// app.use('/admin',AdminRouter)
-// app.use('/pets',PetRouter)
+app.use("/customers", CustomerRouter)
+app.use('/doctors',DoctorRouter)
+app.use('/admin',AdminRouter)
+app.use('/pets',PetRouter)
 
 
 // Db connected here
