@@ -9,7 +9,7 @@ import express, {Request, Response} from "express"
 // import { RoleMiddleware } from "./Middlewares/Role.middle"
 //<<<<<<<<<<<-------don't touch--------->>>>>>>>>>>>
 import connection from './Config/db'
-// import log from "./logs"
+import log from "./logs"
 // import cors from 'cors'
 
 
@@ -39,12 +39,12 @@ app.get("/", (req:Request, res:Response)=>{
 // Db connected here
 app.listen(process.env.port, async ()=>{
     try {
-        //log.info(`Database Connected ....`)
-        await connection.then(()=>console.log("connected to DB"))
-        // log.info(`server is running on ${process.env.port}`)
+        
+        await connection.then(()=>log.info(`Database Connected ....`))
+        log.info(`server is running on ${process.env.port}`)
     } catch (error : any) {
 
-        console.log(error)
-        // log.info('DB-error',`${error.message}`)
+       
+        log.info('DB-error',`${error.message}`)
     }
 })
