@@ -10,7 +10,7 @@ import express, {Request, Response} from "express"
 //<<<<<<<<<<<-------don't touch--------->>>>>>>>>>>>
 import connection from './Config/db'
 import log from "./logs"
-// import cors from 'cors'
+import cors from 'cors'
 
 
 
@@ -18,7 +18,7 @@ const app=express()
 
 //All immediate Middlewares here
 
-// app.use(cors())
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 
